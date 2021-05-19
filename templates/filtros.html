@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busqueda Referativa</title>
+</head>
+<body>
+
+    <h1>Listado a ver que pinta</h1>
+    <div class="content align-content-md-center"></div>
+    {% for inv in fichas  %}
+
+         {% ifchanged inv.inventario%}
+         <hr>
+         <h1>Numero de inventario:</h1>
+         <p >{{inv.inventario.inventario}}</p>
+         <h1>Titulo del inventario:</h1>
+         <pre>{{ inv.inventario.titulo }}</pre>
+        <h1>Resumen del inventario:</h1>
+         <pre style="white-space: pre-line">{{ inv.inventario.resumen }}</pre>
+        <h1>Provincia</h1>
+        {{inv.inventario.refpro.codpro.provincia}}
+           <h1>Yacimiento</h1>
+           {% for mat in materias %}
+             {% if inv.inventario.inventario == mat.inventario %}
+               {{ mat.codyac.desyac }}
+               {% endif %}
+             {% endfor %}
+          <h1>Materia Prima</h1>
+             {% for mat in materias %}
+               {% if inv.inventario.inventario == mat.inventario %}
+            {{ mat.codmat.desmat }}
+                 {% endif %}
+             {% endfor %}
+         <h1>Autores del inventario</h1>
+            {% endifchanged %}
+         <pre>{{ inv.codaut.desaut }}</pre>
+
+          {% spaceless %}
+         {% endspaceless %}
+    {% endfor %}
+</body>
+</html>

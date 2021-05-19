@@ -1,0 +1,251 @@
+{% load static %}
+<html>
+<head>
+<link href="{% static "css/navstyle.css" %}"  rel="stylesheet" >
+<link href="{% static "images/bootstrap-icons-1.4.1/bootstrap-icons.css "%}"  rel="stylesheet" >
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+</head>
+
+<body><header id="header" class=" header-transparent">
+<div class="fluid" style="position:inherit">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+     <a class="navbar-brand" href="{% url 'home' %}" style="text-align: center">Sistema ONRM<br> Búsqueda Referativa</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01" >
+   <form class="form-inline form-row mx-auto" method="GET" action="{% url "results" %}">
+
+    <input class="form-control p-md-2 my-auto" type="search" placeholder="# de Inventario" aria-label="Search" name="inventario" id="busqueda" >
+
+    <div class="form-group  my-lg-auto col-md-automl-2 mb-3"  id="classaut" >
+      <label for="autores" id="aut" style="margin-right: 5px">Autores</label>
+      <select id="autores" class="form-control" name="autor">
+        <option value="" selected></option>
+         {% for autor in autores %}
+          <option value="{{ autor.codaut }}">{{ autor.desaut }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div class="form-group  my-auto col-md-automl-4 mb-3 ml-2" id="classpro">
+      <label for="provincias" id="pro" style="margin-right: 5px">Provincias</label>
+      <select id="provincias" class="form-control" name="province">
+        <option value="" selected></option>
+         {% for prov in provincia %}
+          <option value="{{ prov.codpro }}">{{ prov.provincia }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div class="form-group  my-auto col-md-automl-4 mb-3 ml-2" id="classprima">
+      <label for="mprima" id="prima" style="margin-right: 5px">Materia Prima</label>
+      <select id="mprima" class="form-control" style="margin-right: 5px" name="prima" >
+        <option value="" selected></option>
+         {% for mp in mprima %}
+          <option value="{{ mp.codmat }}">{{ mp.desmat }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div class="input-group d-lg-inline my-auto ml-auto mb-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text" style="background: transparent;border-color: transparent">
+        <label id="check" style="margin-right: 5px">Filtros</label>
+        <input id="checkbox1" type="checkbox" name="chk" aria-label="Checkbox for following text input" >
+      </div>
+    </div>
+  </div>
+  <button id= 'btn-acept' class="btn btn-outline-success ml-auto " type="submit" >Buscar</button>
+  <button id= 'btn-reset'class="btn btn-outline-danger ml-2 " type=reset>Borrar</button>
+   </form>
+  </div>
+</nav>
+</div>
+</header>
+<div class="text-muted ml-5">
+<h5 class="mr-5" style="text-align: end"> {{ count }} resultado(s) encontrado(s) de {{ total }} inventarios</h5>
+    <h5 style="text-align: start">Descargar los resultados en PDF <a href="#" class="text-reset"><i class="bi-download" id="btndownload"></i></a></h5>
+</div>
+<ul id="cardList" class="cards mt-lg-5">
+      <li>
+         {% if qficha|length > 0%}
+        {% for inv in qficha %}
+          {% ifchanged inv.inventario %}
+          <div id = cardimprime class="card transform">
+           <div class="left col 6"><img src="{% static 'images/Document_36500.png' %}"  > </div>
+          <div id="containText" style="text-align: center">
+            <h4 class="mt-2" style="color: #856404;font-weight: bold">INVENTARIO {{ inv.inventario }}</h4>
+          </div>
+          <div class="disappear">
+             <pre style="white-space: unset">Titulo de inventario:  {{ inv.titulo}}</pre>
+             <pre>Provincia: {{ inv.refpro.codpro.provincia }}</pre>
+             <pre style="white-space: nowrap">Yacimiento:{% for mat in materias %}{% if mat.inventario == inv.inventario %} {{ mat.codyac.desyac}}{% endif %}{% endfor %}</pre>
+             <pre style="white-space: initial">Materia Prima:{% for mat in materias %}{% if mat.inventario == inv.inventario %} {% ifchanged mat.codmat %} {{ mat.codmat.desmat }}{% endifchanged %}{% endif %}{% endfor %}</pre>
+             <pre style="white-space: pre-line">Resumen del inventario: {{ inv.resumen }}</pre>
+             <pre style="white-space: pre-line">Autores del inventario: {{ autorpv.desaut }}</pre>
+          </div>
+          </div>
+         {% endifchanged %}
+          {% endfor %}
+        {% else %}
+               <i class="bi-exclamation-circle" style="font-weight: bold"> Lo siento, no hay resultados para su consulta</i>
+        {% endif %}
+      </li>
+    </ul>
+   <div class="modal fade" id="modalbutton" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel"><i class="bi-exclamation-triangle-fill" style="color: darkred"> Atención</i></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <h6><i class="bi-info-circle" style="color: #856404"> Verifique que haya entrado  un número de inventario o seleccionado  al menos uno de los filtros</i></h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>           
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="footer">
+{% if page_obj.has_other_pages %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+       {% if page_obj.has_next %}
+    <li><a href="?{{parametros.urlencode}}&amp;page={{ page_obj.previous_page_number }}"class="page-link">&laquo; Anterior </a></li>
+    {% endif %}{% endif %}
+    {% if count > 25 and count <= 75 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>   
+      {% endif %}
+    {% if  count > 75 and count <= 100 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>    
+    {% endif %}{% if count > 100 and count <= 125 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">4</a></li>    
+    {% endif %}{% if count > 125 and count <= 150 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">4</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=5">5</a></li>
+    {% endif %}{% if count > 150 and count <= 175 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">4</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=5">5</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=6">6</a></li>    
+    {% endif %}{% if count > 175 and count <= 200 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">4</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=5">5</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=6">6</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=7">7</a></li>    
+    {% endif %}{% if count > 200 and count <= 225 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">4</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=5">5</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=6">6</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=7">7</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=8">8</a></li>   
+    {% endif %}
+    {% if count > 225 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=4">4</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=5">5</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=6">6</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=7">7</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=8">8</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=9">9</a></li>  
+    {% endif %}
+    {% if count > 225 %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=1">«« Primera</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=4">4</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=5">5</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=6">6</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=7">7</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=8">8</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=9">9</a></li>
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page=10">10</a></li>    
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="?{{parametros.urlencode}}&amp;page={{ page_obj.end_index }}">Ultima</a></li>
+    
+    {% if page_obj.has_next %}
+        {% if parametros  %}
+    <li class="page-item">
+      <a class="page-link" href="?{{parametros.urlencode}}&amp;page={{ page_obj.next_page_number }} ">Siguiente »</a>
+    </li>{% endif %}{% endif %}
+  </ul>
+  </nav>
+</div>
+{% endif %}
+</body>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script  src="{% static "js/script.js" %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jsPDF-1.3.2/jspdf.js' %}"></script>
+<script src="{% static 'js/jsPDF-1.3.2/dist/jspdf.min.js' %}"></script>
+</html>
+<script>
+
+$(document).ready(function() {
+
+$(".form-group").hide();
+$("#checkbox1" ).on( "click", function (event) {
+if ($( "#checkbox1" ).is(':checked')) {
+   $(".form-group").show();
+   $("#busqueda").val('');
+   $("#busqueda").hide();
+   } else {
+     $('.form-group').hide();
+     $('#autores').val('');
+     $('#provincias').val('');
+     $('#mprima').val('');
+     $('#busqueda').show();
+   }
+});
+$('#btn-acept' ).on("click",function (event) {
+  let valor = $('#busqueda').val();
+  if($.isNumeric(valor) || ($('#mprima').val() !== '' || $('#autores').val()!== '' || $('#provincias').val()!== '')){
+    submit();
+  }
+  $('#modalbutton').modal('show');
+  event.preventDefault();
+
+});
+});
+$("#btndownload").click(function(){
+   var valor = $('#cardList').text();
+   var doc = new jsPDF();
+   var splitvalor = doc.splitTextToSize(valor, 270);
+   doc.setFontSize(11);
+   doc.setFontStyle('arial');
+   var y = 7;
+    for (var i = 0; i < splitvalor.length; i++) {
+        if (y > 280) {
+            y = 10;
+            doc.addPage();
+        }
+        doc.text(15, y, splitvalor[i]);
+        y = y + 7;
+    }
+   doc.save('busqueda_autor.pdf')
+  });
+</script>

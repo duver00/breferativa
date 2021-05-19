@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Card list with animation for hybrid mobile apps.</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  </head>
+  <body>
+    <!--HEADER-->
+    <div class="header">
+      <div id="info">
+        <p>Current Page</p>
+      </div>
+    </div>
+
+    <!--CARDS-->
+    <ul id="cardList" class="cards">
+      <li>
+          <div class="card transform">
+        <div class="face"><h2>: )</h2></div>
+          <div id="containText">
+            <h3>HI! I am a card.</h3><br>
+            <p>Click me to trigger the animation.</p>
+          </div>
+          <div class="extra">
+            <p>Here is some extra info about the items on this card, such as stuff,things and blah.</p>
+          </div>
+          <div class="disappear">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod por incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div>
+      </li>
+      <li><div class="card transform"></div></li>
+      <li><div class="card transform"></div></li>
+      <li><div class="card transform"></div></li>
+      <li><div class="card transform"></div></li>
+      <li><div class="card transform"></div></li>
+    </ul>
+
+    <!--FOOTER-->
+    <div class="footer"></div>
+  </body>
+<!-- partial -->
+  <script  src="{% static "js/script.js" %}"></script>
+
+</body>
+</html>

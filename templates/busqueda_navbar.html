@@ -1,0 +1,143 @@
+{% load static %}
+<html>
+<head>
+<link href="{% static "css/navstyle.css" %}"  rel="stylesheet" >
+<link href="{% static "images/bootstrap-icons-1.4.1/bootstrap-icons.css "%}"  rel="stylesheet" >
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+</head>
+
+<body>
+<header id="header" class=" header-transparent">
+<div class="fluid" style="position:inherit">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+     <a class="navbar-brand" href="{% url 'home' %}" style="text-align: center">Sistema ONRM<br> Búsqueda Referativa</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01" >
+   <form class="form-inline form-row mx-auto" method="GET" action="{% url "results" %}">
+
+    <input class="form-control p-md-2 my-auto" type="search" placeholder="# de Inventario" aria-label="Search" name="inventario" id="busqueda" >
+
+    <div class="form-group  my-lg-auto col-md-automl-2 mb-3"  id="classaut" >
+      <label for="autores" id="aut" style="margin-right: 5px">Autores</label>
+      <select id="autores" class="form-control" name="autor">
+        <option value="" selected></option>
+         {% for autor in autores %}
+          <option value="{{ autor.codaut }}">{{ autor.desaut }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div class="form-group  my-auto col-md-automl-4 mb-3 ml-2" id="classpro">
+      <label for="provincias" id="pro" style="margin-right: 5px">Provincias</label>
+      <select id="provincias" class="form-control" name="province">
+        <option value="" selected></option>
+         {% for prov in provincia %}
+          <option value="{{ prov.codpro }}">{{ prov.provincia }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div class="form-group  my-auto col-md-automl-4 mb-3 ml-2" id="classprima">
+      <label for="mprima" id="prima" style="margin-right: 5px">Materia Prima</label>
+      <select id="mprima" class="form-control" style="margin-right: 5px" name="prima" >
+        <option value="" selected></option>
+         {% for mp in mprima %}
+          <option value="{{ mp.codmat }}">{{ mp.desmat }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div class="input-group d-lg-inline my-auto ml-auto mb-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text" style="background: transparent;border-color: transparent">
+        <label id="check" style="margin-right: 5px">Filtros</label>
+        <input id="checkbox1" type="checkbox" name="chk" value="is_opem"  aria-label="Checkbox for following text input" >
+      </div>
+    </div>
+  </div>
+      <button id= 'btn-acept' class="btn btn-outline-success ml-auto " type="submit" >Buscar</button>
+      <button id= 'btn-reset'class="btn btn-outline-danger ml-2 " type=reset>Borrar</button>
+   </form>
+  </div>
+</nav>
+</div>
+</header>
+    <div class="modal fade" id="modalbutton" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel"><i class="bi-exclamation-triangle-fill" style="color: darkred"> Atención</i></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <h6><i class="bi-info-circle" style="color: #856404"> Verifique que haya entrado  un número de inventario o seleccionado  al menos uno de los filtros</i></h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>           
+          </div>
+        </div>
+      </div>
+    </div>
+{% if is_paginated %}
+<div class="footer">
+<nav aria-label="Page navigation example">
+
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li class="page-item ">
+     <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1" aria-disabled="true">Anterior</a>
+    </li> {% endif %}
+    {% if paginator.num_pages > 3 %}
+    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?page=3">4</a></li>
+    <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+     {% endif %}
+    {% if page_obj.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    </li>{% endif %}
+  </ul>
+</nav>
+</div>
+{% endif %}
+</body>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script  src="{% static "js/script.js" %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
+</html>
+<script>
+
+$(document).ready(function() {
+        $(".form-group").hide();
+        $("#checkbox1" ).on( "click", function (event) {
+        if ($( "#checkbox1" ).is(':checked')) {
+           $(".form-group").show();
+           $("#busqueda").val('');
+           $("#busqueda").hide();
+           } else {
+             $('.form-group').hide();
+             $('#autores').val('');
+             $('#provincias').val('');
+             $('#mprima').val('');
+             $('#busqueda').show();
+   }
+});
+$('#btn-acept' ).on("click",function (event) {
+          let valor = $('#busqueda').val();
+          if($.isNumeric(valor) || ($('#mprima').val() !== '' || $('#autores').val()!== '' || $('#provincias').val()!== '')){
+            submit();
+          }
+          $('#modalbutton').modal('show');
+          event.preventDefault();
+          console.log(valor);
+});
+
+});
+</script>
+
+
