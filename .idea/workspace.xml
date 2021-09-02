@@ -16,21 +16,15 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8697700-5978-4d22-8a70-58f2e0d1f34c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/static/images/logoup.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/django-admin.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/django-admin.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/django-admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/breferativa/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/breferativa/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/pyvenv.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/busqueda_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/busqueda_navbar.html" afterDir="false" />
-    </list>
+    <list default="true" id="c8697700-5978-4d22-8a70-58f2e0d1f34c" name="Default Changelist" comment="cambios de despliegue1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,8 +301,16 @@
       <workItem from="1630542182256" duration="594000" />
       <workItem from="1630543829143" duration="7000" />
       <workItem from="1630548919191" duration="100000" />
-      <workItem from="1630588627449" duration="2311000" />
+      <workItem from="1630588627449" duration="2616000" />
     </task>
+    <task id="LOCAL-00001" summary="cambios de despliegue1">
+      <created>1630601682772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630601682772</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +327,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cambios de despliegue1" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios de despliegue1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1628284191175">
