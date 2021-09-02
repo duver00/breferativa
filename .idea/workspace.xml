@@ -19,12 +19,23 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8697700-5978-4d22-8a70-58f2e0d1f34c" name="Default Changelist" comment="cambios de despliegue1" />
+    <list default="true" id="c8697700-5978-4d22-8a70-58f2e0d1f34c" name="Default Changelist" comment="cambios">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/all_filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/all_filters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/autor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/autor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/prima.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prima.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/prima_autor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prima_autor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/provincia.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/provincia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/provincia_autor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/provincia_autor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/provincia_prima.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/provincia_prima.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/resultados_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resultados_list.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +66,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qHOteFY5taU5CwksNM9lf1OiLi" />
@@ -301,7 +313,7 @@
       <workItem from="1630542182256" duration="594000" />
       <workItem from="1630543829143" duration="7000" />
       <workItem from="1630548919191" duration="100000" />
-      <workItem from="1630588627449" duration="2616000" />
+      <workItem from="1630588627449" duration="3548000" />
     </task>
     <task id="LOCAL-00001" summary="cambios de despliegue1">
       <created>1630601682772</created>
@@ -310,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630601682772</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cambios de despliegue1">
+      <created>1630601785048</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630601785048</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +340,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -329,8 +360,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambios de despliegue1" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios de despliegue1" />
+    <MESSAGE value="cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1628284191175">
@@ -341,26 +372,42 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="462" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1628284262310" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1630355586755">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="823" y="425" key="GitRewordDialog" timestamp="1630602009309">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="823" y="425" key="GitRewordDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1630602009309" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1630601604994">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1630355586755" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1630355586754">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1630601604994" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1630601604994">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1630355586754" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1630355586754">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1630601604994" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1630601604993">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1630355586754" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1630355586755">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1630601604993" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1630601604994">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1630355586755" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1630601604994" />
     <state x="184" y="14" key="SettingsEditor" timestamp="1628284284303">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1628284284303" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1630602068858">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1630602068858" />
+    <state x="768" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1630601623532">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="768" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1630601623532" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/breferativa$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1616975683796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
