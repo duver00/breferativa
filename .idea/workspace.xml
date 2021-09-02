@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8697700-5978-4d22-8a70-58f2e0d1f34c" name="Default Changelist" comment="" />
+    <list default="true" id="c8697700-5978-4d22-8a70-58f2e0d1f34c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/static/images/logoup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/django-admin.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/django-admin.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/django-admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/breferativa/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/breferativa/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/pyvenv.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/busqueda_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/busqueda_navbar.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,27 +61,29 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../onrm" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qHOteFY5taU5CwksNM9lf1OiLi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\Proyectos\Django\breferativa\core" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Dev\Proyectos\Django\breferativa\templates" />
       <recent name="D:\Dev\Proyectos\Django\breferativa\templates\base" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dev\Proyectos\Django\breferativa\core" />
     </key>
   </component>
   <component name="RunManager">
@@ -255,71 +286,75 @@
       <workItem from="1620669210087" duration="12846000" />
       <workItem from="1620766454611" duration="12608000" />
       <workItem from="1620860302135" duration="233000" />
+      <workItem from="1628283829361" duration="1541000" />
+      <workItem from="1628310337129" duration="2441000" />
+      <workItem from="1628313275763" duration="3924000" />
+      <workItem from="1628380591299" duration="89000" />
+      <workItem from="1628516415814" duration="30000" />
+      <workItem from="1628632258585" duration="521000" />
+      <workItem from="1628647895667" duration="3633000" />
+      <workItem from="1628823161856" duration="1302000" />
+      <workItem from="1629348504573" duration="602000" />
+      <workItem from="1629408294121" duration="305000" />
+      <workItem from="1629414175951" duration="271000" />
+      <workItem from="1629421645906" duration="301000" />
+      <workItem from="1629589591688" duration="4013000" />
+      <workItem from="1629646308481" duration="588000" />
+      <workItem from="1630352288912" duration="1242000" />
+      <workItem from="1630536980590" duration="15000" />
+      <workItem from="1630538948227" duration="46000" />
+      <workItem from="1630540259426" duration="34000" />
+      <workItem from="1630542182256" duration="594000" />
+      <workItem from="1630543829143" duration="7000" />
+      <workItem from="1630548919191" duration="100000" />
+      <workItem from="1630588627449" duration="2311000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620698263600">
+    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1628284191175">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1620698263600" />
-    <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1618346137500">
+    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1628284191175" />
+    <state x="462" y="124" key="FileChooserDialogImpl" timestamp="1628284262310">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1616969356608" />
-    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1618346137500" />
-    <state width="1877" height="132" key="GridCell.Tab.0.bottom" timestamp="1620834805471">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1323" height="123" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616965539793" />
-    <state width="1323" height="132" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620782626705" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616779709824" />
-    <state width="1877" height="132" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1620834805471" />
-    <state width="1877" height="132" key="GridCell.Tab.0.center" timestamp="1620834805471">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1323" height="123" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616965539793" />
-    <state width="1323" height="132" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1620782626680" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616779709824" />
-    <state width="1877" height="132" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1620834805471" />
-    <state width="1877" height="132" key="GridCell.Tab.0.left" timestamp="1620834805468">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1323" height="123" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616965539793" />
-    <state width="1323" height="132" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1620782626654" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616779709824" />
-    <state width="1877" height="132" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1620834805468" />
-    <state width="1877" height="132" key="GridCell.Tab.0.right" timestamp="1620834805471">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1323" height="123" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616965539793" />
-    <state width="1323" height="132" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1620782626681" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616779709824" />
-    <state width="1877" height="132" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1620834805471" />
-    <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1618335076451">
+    <state x="462" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1628284262310" />
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1630355586755">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1618335076451" />
-    <state x="379" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1620860321131">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1630355586755" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1630355586754">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1616969076953" />
-    <state x="379" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1620860321131" />
-    <state x="379" y="198" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1617206214113" />
-    <state x="533" y="269" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616799968915" />
-    <state x="533" y="270" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1620669221741" />
-    <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618528425147">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1630355586754" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1630355586754">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="492" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1618528425147" />
-    <state x="486" y="84" width="945" height="965" key="search.everywhere.popup" timestamp="1620664055539">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1630355586754" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1630355586755">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1619209464775" />
-    <state x="486" y="84" width="945" height="965" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1620664055539" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1630355586755" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1628284284303">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1628284284303" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/breferativa$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1616975683796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
