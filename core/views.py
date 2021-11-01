@@ -4,8 +4,7 @@ from django.http import request
 from django.shortcuts import render, redirect
 from .models import Fichas, Autores, MateriasPrimas, Yacimientos, Provincias, Refauto, Refmat, Refyac, Refpro
 from django.views.generic import ListView
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -60,7 +59,8 @@ def buscar_inventario(request):
             count = qmateria.count()
             return render(request, 'all_filters.html', {'qficha': qficha, 'qmateria': qmateria, 'autores': autores,
                                                         'provincia': provincias, 'mprima': mprima, 'autorpv': autorpv,
-                                                        'page_obj': page_obj,'parametros': parametros,'count':count, 'total':count_total  })
+                                                        'page_obj': page_obj, 'parametros': parametros, 'count': count,
+                                                        'total': count_total})
 
         elif chk and request.GET.get('autor', None) and request.GET.get('prima', None):
             autor_list = request.GET.get('autor')
@@ -82,7 +82,8 @@ def buscar_inventario(request):
             count = qmateria.count()
             return render(request, 'prima_autor.html', {'qficha': qficha, 'qmateria': qmateria, 'autores': autores,
                                                         'provincia': provincias, 'mprima': mprima, 'autorpv': autorpv,
-                                                        'parametros': parametros, 'count':count, 'total':count_total, 'page_obj':page_obj})
+                                                        'parametros': parametros, 'count': count, 'total': count_total,
+                                                        'page_obj': page_obj})
 
         elif chk and request.GET.get('autor', None) and request.GET.get('province', None):
             autor_list = request.GET.get('autor')
@@ -99,8 +100,8 @@ def buscar_inventario(request):
             count = qficha.count()
             return render(request, 'provincia_autor.html',
                           {'qficha': qficha, 'autores': autores, 'provincia': provincias,
-                           'mprima': mprima, 'autorpv': autorpv, 'materias': mprima1,'page_obj': page_obj,
-                           'parametros': parametros, 'count':count, 'total': count_total})
+                           'mprima': mprima, 'autorpv': autorpv, 'materias': mprima1, 'page_obj': page_obj,
+                           'parametros': parametros, 'count': count, 'total': count_total})
 
         elif chk and request.GET.get('autor', None):
             autor_list = request.GET.get('autor')
@@ -115,31 +116,34 @@ def buscar_inventario(request):
             count = qficha.count()
             return render(request, 'autor.html', {'qficha': qficha, 'autores': autores, 'provincia': provincias,
                                                   'mprima': mprima, 'autorpv': autorpv, 'materias': mprima1,
-                                                  'page_obj': page_obj, 'parametros': parametros,'count':count, 'total':count_total })
+                                                  'page_obj': page_obj, 'parametros': parametros, 'count': count,
+                                                  'total': count_total})
 
         elif chk and request.GET.get('prima', None) and request.GET.get('province', None):
             materia_list = request.GET.get('prima')
             province_list = request.GET.get('province')
             provinciapv = Provincias.objects.get(codpro__exact=province_list)
-            qficha1 = Fichas.objects.all().prefetch_related('refauto__codaut__refauto_set','refpro__codpro__refpro_set',
+            qficha1 = Fichas.objects.all().prefetch_related('refauto__codaut__refauto_set',
+                                                            'refpro__codpro__refpro_set',
                                                             'refyac').filter(
                 refpro__codpro__codpro__exact=province_list)
             qmateria = Refmat.objects.all().filter(inventario__in=qficha1, codmat=materia_list)
             mp = []
             for inv in qmateria.all():
                 mp.append(inv.inventario)
-            qficha = Fichas.objects.all().prefetch_related('refauto__codaut__refauto_set','refpro__codpro__refpro_set',
-                                                            'refyac').filter(
+            qficha = Fichas.objects.all().prefetch_related('refauto__codaut__refauto_set', 'refpro__codpro__refpro_set',
+                                                           'refyac').filter(
                 refpro__codpro__codpro__exact=province_list, inventario__in=mp)
-            paginator = Paginator(qficha,25)
+            paginator = Paginator(qficha, 25)
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
             parametros = request.GET.copy()
             count = qficha.count()
-            return render(request, 'provincia_prima.html', { 'qmateria': qmateria, 'autores': autores,
+            return render(request, 'provincia_prima.html', {'qmateria': qmateria, 'autores': autores,
                                                             'provincia': provincias, 'mprima': mprima,
-                                                            'page_obj': page_obj, 'parametros': parametros, 'count':count,
-                                                             'total': count_total, 'provinciapv':provinciapv})
+                                                            'page_obj': page_obj, 'parametros': parametros,
+                                                            'count': count,
+                                                            'total': count_total, 'provinciapv': provinciapv})
 
         elif chk and request.GET.get('province', None):
             province_list = request.GET.get('province')
@@ -154,8 +158,9 @@ def buscar_inventario(request):
             count = qficha.count()
             return render(request, 'provincia.html', {'autores': autores, 'provincia': provincias,
                                                       'mprima': mprima, 'materias': mprima1, 'page_obj': page_obj,
-                                                      'parametros': parametros, 'provinciab':province_list, 'count':count,
-                                                      'total':count_total})
+                                                      'parametros': parametros, 'provinciab': province_list,
+                                                      'count': count,
+                                                      'total': count_total})
 
         elif chk and request.GET.get('prima', None):
             materia_list = request.GET.get('prima')
@@ -163,7 +168,8 @@ def buscar_inventario(request):
             mp = []
             for inv in materia.all():
                 mp.append(inv.inventario)
-            qficha = Fichas.objects.all().prefetch_related('refauto__codaut__refauto_set', 'refpro__codpro__refpro_set').filter(inventario__in=mp)
+            qficha = Fichas.objects.all().prefetch_related('refauto__codaut__refauto_set',
+                                                           'refpro__codpro__refpro_set').filter(inventario__in=mp)
             paginatormp = Paginator(qficha, 25)
             page_number = request.GET.get('page')
             page_mp = paginatormp.get_page(page_number)
@@ -171,9 +177,10 @@ def buscar_inventario(request):
             count = qficha.count()
             prov1 = Refpro.objects.all().filter(inventario__inventario__in=qficha)
             return render(request, 'prima.html', {'autores': autores, 'provincia': provincias,
-                                                      'mprima': mprima,'page_mp':page_mp, 'parametros': parametros,
-                                                  'materia_list': materia_list, 'materia': materia,'count':count, 'total':count_total,
-                                                  'prov1':prov1})
+                                                  'mprima': mprima, 'page_mp': page_mp, 'parametros': parametros,
+                                                  'materia_list': materia_list, 'materia': materia, 'count': count,
+                                                  'total': count_total,
+                                                  'prov1': prov1})
         else:
             return redirect('/')
     else:
